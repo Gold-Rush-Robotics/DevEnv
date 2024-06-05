@@ -1,6 +1,6 @@
 #!/bin/bash
 # Pull the actual image so it is saved locally
-docker pull ghcr.io/roboeagles4828/developer-environment:8
+docker pull ghcr.io/gold-rush-robotics/dev_env:latest
 
 # Create the directory where isaac sim will save to.
 mkdir -p ~/docker/isaac-sim
@@ -32,10 +32,3 @@ echo -e "\
 nvidia_layers=${nvidia_layers}\n\
 nvidia_icd=${nvidia_icd}\n\
 _10_nvidia=${_10_nvidia}" > "${nvidia_driver_config_path}"
-
-
-XSOCK=/tmp/.X11-unix
-XAUTH=/tmp/.docker.xauth
-touch $XAUTH
-echo "Display to use: $DISPLAY"
-xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -

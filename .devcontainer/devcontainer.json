@@ -1,19 +1,8 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/roboeagles4828/developer-environment:8",
+    "image": "ghcr.io/gold-rush-robotics/dev_env:latest",
     "containerEnv": {
-        "NVIDIA_VISIBLE_DEVICES": "all",
-        "NVIDIA_DRIVER_CAPABILITIES": "all",
-        "SHELL": "/usr/bin/zsh",
-        "ACCEPT_EULA": "Y",
-        "ROS_DOMAIN_ID": "0",
-        "OMNI_USER": "admin",
-        "OMNI_PASS": "admin",
-        "OMNI_SERVER": "omniverse://127.0.0.1/NVIDIA/Assets/Isaac/2022.2.1",
-        "FASTRTPS_DEFAULT_PROFILES_FILE": "/usr/local/share/middleware_profiles/rtps_udp_profile.xml",
-        "WORKSPACE_LOCAL_PATH": "${localWorkspaceFolder}",
-        "ISAAC_LOCAL_STORAGE": "${localEnv:HOME}/docker/isaac-sim",
-        "PYTHONWARNINGS": "ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::pkg_resources"
+        "SHELL": "/usr/bin/zsh"
     },
     "remoteEnv": {
         "XAUTHORITY": "/tmp/.docker.xauth",
@@ -40,8 +29,6 @@
         "/tmp/.docker.xauth:/tmp/.docker.xauth:rw",
         "-v",
         "/dev:/dev:rw",
-        "--runtime=nvidia",
-        "--gpus", "all",
         "--network=host",
         "--name=DevEnv",
         "--init"
@@ -53,10 +40,13 @@
             "extensions": [
 				"ms-azuretools.vscode-docker",
 				"ms-iot.vscode-ros",
-				"GitHub.copilot",
 				"eamodio.gitlens",
 				"appulate.filewatcher",
 				"formulahendry.code-runner",
+                "ms-python.python",
+                "ms-vscode.cpptools"
+                //"matangover.mypy",
+                //"ms-python.pylint"
 			]
         }
     }
