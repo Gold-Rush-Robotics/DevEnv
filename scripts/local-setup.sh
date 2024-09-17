@@ -6,12 +6,12 @@ NC='\033[0m'
 SCRIPT_PATH=$(dirname "$0")
 devenv_path="$SCRIPT_PATH/../.devcontainer/.env"
 
-# Graphics Driver Check
-hasDriver=$(nvidia-smi | grep "Version: 535")
-if [[ -z "$hasDriver" ]]; then
- echo -e "${RED}Please install nvidia driver 535 before this install script${NC}"
- exit 1
-fi
+# # Graphics Driver Check
+# hasDriver=$(nvidia-smi | grep "Version: 535")
+# if [[ -z "$hasDriver" ]]; then
+#  echo -e "${RED}Please install nvidia driver 535 before this install script${NC}"
+#  exit 1
+# fi
 
 echo -e "${ORANGE}INSTALLING APT PACKAGES${NC}"
 sudo apt-get update
@@ -47,20 +47,20 @@ else
 fi
 
 
-# Nvidia Docker
-if ! dpkg -s nvidia-docker2 > /dev/null; then
-  echo -e "${ORANGE}INSTALLING NVIDIA DOCKER${NC}"
-  distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-  && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-  && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-  sudo apt-get update
-  sudo apt-get install -y nvidia-docker2
-  sudo systemctl restart docker
-else
-  echo -e "${GREEN}NVIDIA DOCKER ALREADY INSTALLED${NC}"
-fi
+# # Nvidia Docker
+# if ! dpkg -s nvidia-docker2 > /dev/null; then
+#   echo -e "${ORANGE}INSTALLING NVIDIA DOCKER${NC}"
+#   distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+#   && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+#   && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+#     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+#     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+#   sudo apt-get update
+#   sudo apt-get install -y nvidia-docker2
+#   sudo systemctl restart docker
+# else
+#   echo -e "${GREEN}NVIDIA DOCKER ALREADY INSTALLED${NC}"
+# fi
 
 # Deployment Keys
 if [ ! -f ~/.ssh/robot_deploy ]; then
