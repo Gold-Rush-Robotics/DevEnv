@@ -1,6 +1,6 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/roboeagles4828/developer-environment:7",
+    "image": "ghcr.io/roboeagles4828/developer-environment:8",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
