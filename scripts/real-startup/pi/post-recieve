@@ -1,5 +1,0 @@
-#!/bin/bash
-cd /home/ubuntu/DevEnv2023
-source /opt/ros/humble/setup.bash
-colcon build --symlink-install --paths src/*
-sudo systemctl restart edna.service

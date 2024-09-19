@@ -1,1 +1,0 @@
-FROM nvcr.io/nvidia/isaac/ros:aarch64-humble-nav2_6dfaf7adbe190f1181c3a0a2f2418760

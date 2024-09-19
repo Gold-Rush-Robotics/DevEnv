@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-CMD="/isaac-sim/omni.isaac.sim.post.install.sh"
-isaac $CMD

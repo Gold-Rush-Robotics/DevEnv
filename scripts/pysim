@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-cd /workspaces/DevEnv2023/rio && python3 robot.py sim

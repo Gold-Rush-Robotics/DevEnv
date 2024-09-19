@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-python_path="/isaac-sim/python.sh"
-gym_path="/root/edna/isaac/Eaglegym"
-isaac $python_path -m pip uninstall -y eaglegym
-isaac $python_path -m pip install -e $gym_path
