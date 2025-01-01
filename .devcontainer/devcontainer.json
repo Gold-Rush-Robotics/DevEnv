@@ -1,6 +1,6 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/roboeagles4828/developer-environment:8",
+    "image": "ghcr.io/gold-rush-robotics/dev_env:2",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
@@ -16,7 +16,7 @@
     },
     
     "postCreateCommand": "sh .devcontainer/postCreate.sh",
-    "postStartCommand": " sh .devcontainer/postStart.sh",
+    // "postStartCommand": " sh .devcontainer/postStart.sh",
     "initializeCommand": "sh .devcontainer/init.sh",
     "securityOpt": [ "seccomp=unconfined" ],
     "capAdd": ["SYS_PTRACE"],
@@ -37,7 +37,6 @@
             "extensions": [
 				"ms-azuretools.vscode-docker",
 				"ms-iot.vscode-ros",
-				"GitHub.copilot",
 				"eamodio.gitlens",
 				"appulate.filewatcher",
 				"formulahendry.code-runner",
