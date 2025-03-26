@@ -1,10 +1,10 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/gold-rush-robotics/dev_env:2",
+    "image": "ghcr.io/gold-rush-robotics/dev_env:4",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
-        "SHELL": "/usr/bin/zsh",
+        "SHELL": "zsh",
         "ROS_DOMAIN_ID": "0",
         "FASTRTPS_DEFAULT_PROFILES_FILE": "/usr/local/share/middleware_profiles/rtps_udp_profile.xml",
         "WORKSPACE_LOCAL_PATH": "${localWorkspaceFolder}",
@@ -22,8 +22,8 @@
     "capAdd": ["SYS_PTRACE"],
     "mounts": [
         "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind", // docker
-        "source=${localEnv:HOME}/docker/vscode,target=/home/admin/.vscode-server,type=bind", // vscode
-        "source=${localEnv:HOME}/.ssh,target=/home/admin/.ssh,type=bind" // vscode
+        // "source=${localEnv:HOME}/docker/vscode,target=/home/admin/.vscode-server,type=bind", // vscode
+        // "source=${localEnv:HOME}/.ssh,target=/home/admin/.ssh,type=bind" // vscode
     ],
     "runArgs": [
 		"--privileged",
@@ -43,4 +43,5 @@
 			]
         }
     }
+    
 }
