@@ -1,6 +1,6 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/gold-rush-robotics/dev_env:4",
+    "image": "ghcr.io/gold-rush-robotics/dev_env:5",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
