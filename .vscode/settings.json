@@ -4,11 +4,11 @@
                                      {
                                          "match":  "\\.xacro*$",
                                          "isAsync":  true,
-                                         "cmd":  "/bin/bash -c \u0027source /opt/ros/humble/setup.sh \u0026\u0026 source ${workspaceRoot}/install/setup.bash \u0026\u0026 xacro ${workspaceRoot}/src/edna_description/urdf/robots/edna.urdf.xacro \u003e ${workspaceRoot}/src/edna_description/urdf/edna.urdf namespace:=$ROS_NAMESPACE\u0027",
+                                         "cmd":  "/bin/bash -c \u0027source /opt/ros/jazzy/setup.sh \u0026\u0026 source ${workspaceRoot}/install/setup.bash \u0026\u0026 xacro ${workspaceRoot}/src/edna_description/urdf/robots/edna.urdf.xacro \u003e ${workspaceRoot}/src/edna_description/urdf/edna.urdf namespace:=$ROS_NAMESPACE\u0027",
                                          "event":  "onFileChange"
                                      }
                                  ],
-        "ros.distro":  "humble",
+        "ros.distro":  "jazzy",
         "ros.rosSetupScript":  "${workspaceFolder}/install/setup.bash",
         "files.associations":  {
                                    "string":  "cpp",
@@ -98,12 +98,12 @@
                                                "/workspaces/edna2023/build/edna_debugger",
                                                "/workspaces/edna2023/install/edna_debugger/lib/python3.10/site-packages",
                                                "/home/admin/workspaces/rtab_ws/install/rtabmap_ros/local/lib/python3.10/dist-packages",
-                                               "/opt/ros/humble/lib/python3.10/site-packages",
-                                               "/opt/ros/humble/local/lib/python3.10/dist-packages"
+                                               "/opt/ros/jazzy/lib/python3.10/site-packages",
+                                               "/opt/ros/jazzy/local/lib/python3.10/dist-packages"
                                            ],
         "python.analysis.extraPaths":  [
-                                           "/opt/ros/humble/lib/python3.10/site-packages",
-                                           "/opt/ros/humble/local/lib/python3.10/dist-packages"
+                                           "/opt/ros/jazzy/lib/python3.10/site-packages",
+                                           "/opt/ros/jazzy/local/lib/python3.10/dist-packages"
                                        ]
     },
     null,
