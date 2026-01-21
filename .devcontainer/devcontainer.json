@@ -1,6 +1,6 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/gold-rush-robotics/dev_env:5",
+    "image": "ghcr.io/gold-rush-robotics/dev_env:8",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
@@ -11,7 +11,7 @@
         "PYTHONWARNINGS": "ignore:::setuptools.command.install,ignore:::setuptools.command.easy_install,ignore:::pkg_resources"
     },
      "remoteEnv": {
-        "DISPLAY": ":0",
+        "DISPLAY": "${localEnv:DISPLAY}",
         "PATH": "${containerWorkspaceFolder}/scripts:${containerEnv:PATH}"
     },
     
@@ -28,7 +28,7 @@
     "runArgs": [
 		"--privileged",
         "--net", "host",
-        "-e", "DISPLAY=:0",
+        "-e", "DISPLAY=${localEnv:DISPLAY}",
 		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
         // "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
