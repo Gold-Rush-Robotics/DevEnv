@@ -1,6 +1,6 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/gold-rush-robotics/dev_env:8",
+    "image": "ghcr.io/gold-rush-robotics/dev_env:9",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
@@ -30,6 +30,8 @@
         "--net", "host",
         "-e", "DISPLAY=${localEnv:DISPLAY}",
 		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
+        "-v", "/dev:/dev:rw"
+
         // "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
 	],
     "customizations": {
