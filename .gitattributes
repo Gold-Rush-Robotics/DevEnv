@@ -1,0 +1,2 @@
+.devcontainer/init.sh text eol=lf
+.devcontainer/postCreate.sh text eol=lf
