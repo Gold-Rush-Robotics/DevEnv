@@ -4,7 +4,8 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
-        "SHELL": "zsh",
+        // "SHELL": "zsh",
+		"initializeCommand": "wsl sh .devcontainer/init.sh",
         "ROS_DOMAIN_ID": "0",
         "FASTRTPS_DEFAULT_PROFILES_FILE": "/usr/local/share/middleware_profiles/rtps_udp_profile.xml",
         "WORKSPACE_LOCAL_PATH": "${localWorkspaceFolder}",
