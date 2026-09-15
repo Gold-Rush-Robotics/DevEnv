@@ -1,6 +1,6 @@
 {
     "name": "DevEnv",
-    "image": "ghcr.io/gold-rush-robotics/dev_env:9",
+    "image": "osrf/ros:jazzy-desktop",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
     "containerEnv": {
