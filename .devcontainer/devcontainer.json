@@ -24,7 +24,7 @@
     "securityOpt": [ "seccomp=unconfined" ],
     "capAdd": ["SYS_PTRACE"],
     "mounts": [
-        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind", // docker
+        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" // docker
         // "source=${localEnv:HOME}/docker/vscode,target=/home/admin/.vscode-server,type=bind", // vscode
         // "source=${localEnv:HOME}/.ssh,target=/home/admin/.ssh,type=bind" // vscode
     ],
@@ -41,10 +41,12 @@
         "vscode": {
             "extensions": [
 				"ms-azuretools.vscode-docker",
-				"ms-iot.vscode-ros",
 				"eamodio.gitlens",
 				"appulate.filewatcher",
 				"formulahendry.code-runner",
+                "Ranch-Hand-Robotics.rde-pack",
+                "Ranch-Hand-Robotics.urdf-editor",
+                "Ranch-Hand-Robotics.rde-ros-2"
 			]
         }
     }
