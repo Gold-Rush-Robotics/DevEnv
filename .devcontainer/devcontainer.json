@@ -3,6 +3,7 @@
     "image": "ghcr.io/gold-rush-robotics/dev_env:9",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/DevEnv,type=bind",
     "workspaceFolder": "/workspace/DevEnv",
+    "overrideCommand": false,
     "containerEnv": {
         "SHELL": "zsh",
         "ROS_DOMAIN_ID": "0",
@@ -23,11 +24,12 @@
     "securityOpt": [ "seccomp=unconfined" ],
     "capAdd": ["SYS_PTRACE"],
     "mounts": [
-        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind", // docker
+        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" // docker
         // "source=${localEnv:HOME}/docker/vscode,target=/home/admin/.vscode-server,type=bind", // vscode
         // "source=${localEnv:HOME}/.ssh,target=/home/admin/.ssh,type=bind" // vscode
     ],
     "runArgs": [
+        "--init",
 		"--privileged",
         "--net", "host",
 		"-v", "${env:HOME}/.Xauthority:/mnt/.Xauthority",
@@ -39,10 +41,12 @@
         "vscode": {
             "extensions": [
 				"ms-azuretools.vscode-docker",
-				"ms-iot.vscode-ros",
 				"eamodio.gitlens",
 				"appulate.filewatcher",
 				"formulahendry.code-runner",
+                "Ranch-Hand-Robotics.rde-pack",
+                "Ranch-Hand-Robotics.urdf-editor",
+                "Ranch-Hand-Robotics.rde-ros-2"
 			]
         }
     }
